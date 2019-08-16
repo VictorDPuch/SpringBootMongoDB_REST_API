@@ -1,4 +1,4 @@
-com/cdg/cdg/models/Contact.class
 com/cdg/cdg/CdgApplication.class
+com/cdg/cdg/models/Contact.class
 com/cdg/cdg/controllers/ContactController.class
 com/cdg/cdg/repositories/ContactRepository.class

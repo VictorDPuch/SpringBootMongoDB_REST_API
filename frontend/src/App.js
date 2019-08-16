@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -12,29 +11,27 @@ class App extends Component {
     };
   }
 componentDidMount() {
-    axios.get('/contacts/')
-  .then(res => {
-     this.setState({ contacts: res.data });
-        console.log(this.state.contacts);
-        alert("datos cargados");
-  })
-  .catch(error => {
-    alert("null");
-  });
+ fetch('http://localhost:8080/contacts')
+      .then((response) => {
+        return response.json()
+      })
+      .then((contacts) => {
+        this.setState({ contacts: contacts })
+      })
 }
 
   render() {
     return (
-      <div class="container">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
+      <div className="container">
+        <div className="panel panel-default">
+          <div className="panel-heading">
+            <h3 className="panel-title">
               CONTACTS LIST
             </h3>
           </div>
-          <div class="panel-body">
-            <h4><Link to="/create"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add Contact</Link></h4>
-            <table class="table table-stripe">
+          <div className="panel-body">
+            <h4><Link to="/create"><span className="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add Contact</Link></h4>
+            <table className="table table-stripe">
               <thead>
                 <tr>
                   <th>Name</th>
