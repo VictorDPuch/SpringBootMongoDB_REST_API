@@ -10,16 +10,15 @@ class App extends Component {
       contacts: []
     };
   }
+  
 componentDidMount() {
- fetch('http://localhost:8080/contacts')
-      .then((response) => {
-        return response.json()
-      })
-      .then((contacts) => {
-        this.setState({ contacts: contacts })
-      })
-}
-
+    axios.get('http://localhost:8080/contacts')
+      .then(res => {
+        this.setState({ contacts: res.data });
+        console.log(this.state.contacts);
+      });
+  }
+  
   render() {
     return (
       <div className="container">

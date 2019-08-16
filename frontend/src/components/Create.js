@@ -26,7 +26,7 @@ class Create extends Component {
 
     const { name, address, city, phone, email } = this.state;
 
-    axios.post('/contacts', { name, address, city, phone, email })
+    axios.post('http://localhost:8080/contacts/', { name, address, city, phone, email })
       .then((result) => {
         this.props.history.push("/")
       });
@@ -35,37 +35,37 @@ class Create extends Component {
   render() {
     const { name, address, city, phone, email } = this.state;
     return (
-      <div class="container">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
+      <div className="container">
+        <div className="panel panel-default">
+          <div className="panel-heading">
+            <h3 className="panel-title">
               ADD CONTACT
             </h3>
           </div>
-          <div class="panel-body">
-            <h4><Link to="/"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Contacts List</Link></h4>
+          <div className="panel-body">
+            <h4><Link to="/"><span className="glyphicon glyphicon-th-list" aria-hidden="true"></span> Contacts List</Link></h4>
             <form onSubmit={this.onSubmit}>
-              <div class="form-group">
+              <div className="form-group">
                 <label for="isbn">Name:</label>
-                <input type="text" class="form-control" name="name" value={name} onChange={this.onChange} placeholder="Name" />
+                <input type="text" className="form-control" name="name" value={name} onChange={this.onChange} placeholder="Name" />
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <label for="title">Address:</label>
-                <input type="text" class="form-control" name="address" value={address} onChange={this.onChange} placeholder="Address" />
+                <input type="text" className="form-control" name="address" value={address} onChange={this.onChange} placeholder="Address" />
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <label for="author">City:</label>
-                <input type="text" class="form-control" name="city" value={city} onChange={this.onChange} placeholder="City" />
+                <input type="text" className="form-control" name="city" value={city} onChange={this.onChange} placeholder="City" />
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <label for="published_date">Phone:</label>
-                <input type="text" class="form-control" name="phone" value={phone} onChange={this.onChange} placeholder="Phone Number" />
+                <input type="text" className="form-control" name="phone" value={phone} onChange={this.onChange} placeholder="Phone Number" />
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <label for="publisher">Email:</label>
-                <input type="email" class="form-control" name="email" value={email} onChange={this.onChange} placeholder="Email Address" />
+                <input type="email" className="form-control" name="email" value={email} onChange={this.onChange} placeholder="Email Address" />
               </div>
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" className="btn btn-default">Submit</button>
             </form>
           </div>
         </div>

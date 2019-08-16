@@ -12,7 +12,7 @@ class Show extends Component {
   }
 
   componentDidMount() {
-    axios.get('/contacts/'+this.props.match.params.id)
+    axios.get('http://localhost:8080/contacts/'+this.props.match.params.id)
       .then(res => {
         this.setState({ contact: res.data });
         console.log(this.state.contact);
@@ -21,7 +21,7 @@ class Show extends Component {
 
   delete(id){
     console.log(id);
-    axios.delete('/contacts/'+id)
+    axios.delete('http://localhost:8080/contacts/'+id)
       .then((result) => {
         this.props.history.push("/")
       });
@@ -29,15 +29,15 @@ class Show extends Component {
 
   render() {
     return (
-      <div class="container">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
+      <div className="container">
+        <div className="panel panel-default">
+          <div className="panel-heading">
+            <h3 className="panel-title">
               Contact Details
             </h3>
           </div>
-          <div class="panel-body">
-            <h4><Link to="/"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Contacts List</Link></h4>
+          <div className="panel-body">
+            <h4><Link to="/"><span className="glyphicon glyphicon-th-list" aria-hidden="true"></span> Contacts List</Link></h4>
             <dl>
               <dt>Name:</dt>
               <dd>{this.state.contact.name}</dd>
@@ -50,8 +50,8 @@ class Show extends Component {
               <dt>Email Address:</dt>
               <dd>{this.state.contact.email}</dd>
             </dl>
-            <Link to={`/edit/${this.state.contact.id}`} class="btn btn-success">Edit</Link>&nbsp;
-            <button onClick={this.delete.bind(this, this.state.contact.id)} class="btn btn-danger">Delete</button>
+            <Link to={`/edit/${this.state.contact.id}`} className="btn btn-success">Edit</Link>&nbsp;
+            <button onClick={this.delete.bind(this, this.state.contact.id)} className="btn btn-danger">Delete</button>
           </div>
         </div>
       </div>

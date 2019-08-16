@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.Optional;
 import org.springframework.web.bind.annotation.CrossOrigin;
+
 @CrossOrigin(origins = "*", maxAge = 3600)
+
 @RestController
 public class ContactController {
 
@@ -34,7 +36,6 @@ public class ContactController {
     @RequestMapping(method=RequestMethod.POST, value="/contacts")
     public Contact save(@RequestBody Contact contact) {
         contactRepository.save(contact);
-
         return contact;
     }
 

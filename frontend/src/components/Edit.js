@@ -12,7 +12,7 @@ class Edit extends Component {
   }
 
   componentDidMount() {
-    axios.get('/contacts/'+this.props.match.params.id)
+    axios.get('http://localhost:8080/contacts/'+this.props.match.params.id)
       .then(res => {
         this.setState({ contact: res.data });
         console.log(this.state.contact);
@@ -30,7 +30,7 @@ class Edit extends Component {
 
     const { name, address, city, postalCode, phone } = this.state.contact;
 
-    axios.put('/contacts/'+this.props.match.params.id, { name, address, city, postalCode, phone })
+    axios.put(''+this.props.match.params.id, { name, address, city, postalCode, phone })
       .then((result) => {
         this.props.history.push("/show/"+this.props.match.params.id)
       });
@@ -38,37 +38,37 @@ class Edit extends Component {
 
   render() {
     return (
-      <div class="container">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
+      <div className="container">
+        <div className="panel panel-default">
+          <div className="panel-heading">
+            <h3 className="panel-title">
               EDIT Contact
             </h3>
           </div>
-          <div class="panel-body">
-            <h4><Link to={`/show/${this.state.contact.id}`}><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Contact List</Link></h4>
+          <div className="panel-body">
+            <h4><Link to={`/show/${this.state.contact.id}`}><span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Contact List</Link></h4>
             <form onSubmit={this.onSubmit}>
-              <div class="form-group">
+              <div className="form-group">
                 <label for="name">Name:</label>
-                <input type="text" class="form-control" name="name" value={this.state.contact.name} onChange={this.onChange} placeholder="Name" />
+                <input type="text" className="form-control" name="name" value={this.state.contact.name} onChange={this.onChange} placeholder="Name" />
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <label for="title">Address:</label>
-                <input type="text" class="form-control" name="address" value={this.state.contact.address} onChange={this.onChange} placeholder="Address" />
+                <input type="text" className="form-control" name="address" value={this.state.contact.address} onChange={this.onChange} placeholder="Address" />
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <label for="author">City:</label>
-                <input type="text" class="form-control" name="city" value={this.state.contact.city} onChange={this.onChange} placeholder="City" />
+                <input type="text" className="form-control" name="city" value={this.state.contact.city} onChange={this.onChange} placeholder="City" />
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <label for="published_date">Phone Number:</label>
-                <input type="text" class="form-control" name="phone" value={this.state.contact.phone} onChange={this.onChange} placeholder="Phone Number" />
+                <input type="text" className="form-control" name="phone" value={this.state.contact.phone} onChange={this.onChange} placeholder="Phone Number" />
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <label for="description">Email:</label>
-                <input type="email" class="form-control" name="email" value={this.state.contact.email} onChange={this.onChange} placeholder="Email Address" />
+                <input type="email" className="form-control" name="email" value={this.state.contact.email} onChange={this.onChange} placeholder="Email Address" />
               </div>
-              <button type="submit" class="btn btn-default">Update</button>
+              <button type="submit" className="btn btn-default">Update</button>
             </form>
           </div>
         </div>
