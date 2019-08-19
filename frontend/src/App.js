@@ -12,7 +12,7 @@ class App extends Component {
   }
   
 componentDidMount() {
-    axios.get('http://localhost:8080/contacts')
+    axios.get('http://localhost:8080/congregants')
       .then(res => {
         this.setState({ contacts: res.data });
         console.log(this.state.contacts);

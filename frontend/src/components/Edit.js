@@ -12,7 +12,7 @@ class Edit extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8080/contacts/'+this.props.match.params.id)
+    axios.get('http://localhost:8080/congregants/'+this.props.match.params.id)
       .then(res => {
         this.setState({ contact: res.data });
         console.log(this.state.contact);

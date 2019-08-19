@@ -12,7 +12,7 @@ class Show extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8080/contacts/'+this.props.match.params.id)
+    axios.get('http://localhost:8080/congregants/'+this.props.match.params.id)
       .then(res => {
         this.setState({ contact: res.data });
         console.log(this.state.contact);
@@ -21,7 +21,7 @@ class Show extends Component {
 
   delete(id){
     console.log(id);
-    axios.delete('http://localhost:8080/contacts/'+id)
+    axios.delete('http://localhost:8080/congregants/'+id)
       .then((result) => {
         this.props.history.push("/")
       });
@@ -43,8 +43,8 @@ class Show extends Component {
               <dd>{this.state.contact.name}</dd>
               <dt>Address:</dt>
               <dd>{this.state.contact.address}</dd>
-              <dt>City:</dt>
-              <dd>{this.state.contact.city}</dd>
+              <dt>Birthday:</dt>
+              <dd>{this.state.contact.birthday}</dd>
               <dt>Phone Number:</dt>
               <dd>{this.state.contact.phone}</dd>
               <dt>Email Address:</dt>
