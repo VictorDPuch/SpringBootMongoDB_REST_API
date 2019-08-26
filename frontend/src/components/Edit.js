@@ -20,7 +20,7 @@ class Edit extends Component {
   }
 
   onChange = (e) => {
-    const state = this.state.contact
+    const state = this.state.contact;
     state[e.target.name] = e.target.value;
     this.setState({contact:state});
   }
@@ -33,7 +33,7 @@ class Edit extends Component {
     axios.put('http://localhost:8080/congregants/'+this.props.match.params.id, 
     { name,first_last_name,second_last_name, address, birthday,phone,email,gender,civil_status,type,baptized})
       .then((result) => {
-        this.props.history.push("/show/"+this.props.match.params.id)
+        this.props.history.push("/show/"+this.props.match.params.id);
       });
   }
 

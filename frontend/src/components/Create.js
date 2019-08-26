@@ -16,7 +16,7 @@ class Create extends Component {
     };
   }
   onChange = (e) => {
-    const state = this.state
+    const state = this.state;
     state[e.target.name] = e.target.value;
     this.setState(state);
   }
@@ -29,7 +29,7 @@ class Create extends Component {
     axios.post('http://localhost:8080/congregants/', 
     {name,first_last_name,second_last_name, address, birthday,phone,email,gender,civil_status,type,baptized})
       .then((result) => {
-        this.props.history.push("/")
+        this.props.history.push("/");
       });
   }
 

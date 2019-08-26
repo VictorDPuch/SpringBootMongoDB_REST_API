@@ -23,7 +23,7 @@ class Show extends Component {
     console.log(id);
     axios.put('http://localhost:8080/congregants/delete/'+id)
       .then((result) => {
-        this.props.history.push("/")
+        this.props.history.push("/");
       });
   }
 
