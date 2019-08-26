@@ -35,13 +35,13 @@ public class CongregantController {
 
     @RequestMapping(method=RequestMethod.POST, value="/congregants")
     public Congregant save(@RequestBody Congregant contact) {
+        contact.setStatus("A");
         congregantRepository.save(contact);
         return contact;
     }
 
     @RequestMapping(method=RequestMethod.GET, value="/congregants/{id}")
     public Optional<Congregant> show(@PathVariable String id) {
-        System.out.println("reached");
         return congregantRepository.findById(id);
     }
 
@@ -49,12 +49,13 @@ public class CongregantController {
     public Congregant update(@PathVariable String id, @RequestBody Congregant congregant) {
         Optional<Congregant> optcontact = congregantRepository.findById(id);
         Congregant c = optcontact.get();
+         System.out.println("updating");
         if(congregant.getName() != null)
             c.setName(congregant.getName());
         if(congregant.getFirst_last_name() != null)
-            c.setName(congregant.getFirst_last_name());
+            c.setFirst_last_name(congregant.getFirst_last_name());
         if(congregant.getSecond_last_name() != null)
-            c.setName(congregant.getSecond_last_name());
+            c.setSecond_last_name(congregant.getSecond_last_name());
         if(congregant.getAddress() != null)
             c.setAddress(congregant.getAddress());
         if(congregant.getPhone() != null)
@@ -62,24 +63,26 @@ public class CongregantController {
         if(congregant.getEmail() != null)
             c.setEmail(congregant.getEmail());
         if(congregant.getBirthday() != null)
-            c.setEmail(congregant.getBirthday());
+            c.setBirthday(congregant.getBirthday());
         if(congregant.getGender() != null)
-            c.setEmail(congregant.getGender());
+            c.setGender(congregant.getGender());
         if(congregant.getCivil_status() != null)
-            c.setEmail(congregant.getCivil_status());
+            c.setCivil_status(congregant.getCivil_status());
         if(congregant.getType() != null)
-            c.setEmail(congregant.getType());
+            c.setType(congregant.getType());
          if(congregant.getBaptized() != null)
-            c.setEmail(congregant.getBaptized());
+            c.setBaptized(congregant.getBaptized());
         congregantRepository.save(c);
         return c;
     }
 
-    @RequestMapping(method=RequestMethod.DELETE, value="/congregants/{id}")
-    public String delete(@PathVariable String id) {
-        Optional<Congregant> coptcongregant = congregantRepository.findById(id);
-        Congregant congregant=  coptcongregant.get();
-        congregantRepository.delete(congregant);
-        return "";
+    @RequestMapping(method=RequestMethod.PUT, value="/congregants/delete/{id}")
+    public Congregant delete(@PathVariable String id) {
+        Optional<Congregant> optcontact = congregantRepository.findById(id);
+        Congregant c = optcontact.get();
+        c.setStatus("B");
+        System.out.println("deleting");
+        congregantRepository.save(c);
+        return c;
     }
 }

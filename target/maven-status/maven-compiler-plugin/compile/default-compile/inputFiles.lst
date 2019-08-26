@@ -1,4 +1,4 @@
-/home/victorpuchacer/SpringBootMongoDB/src/main/java/com/cdg/cdg/controllers/CongregantController.java
-/home/victorpuchacer/SpringBootMongoDB/src/main/java/com/cdg/cdg/repositories/CongregantRepository.java
-/home/victorpuchacer/SpringBootMongoDB/src/main/java/com/cdg/cdg/CdgApplication.java
-/home/victorpuchacer/SpringBootMongoDB/src/main/java/com/cdg/cdg/models/Congregant.java
+/home/victorpuch/SpringBootMongoDB/src/main/java/com/cdg/cdg/controllers/CongregantController.java
+/home/victorpuch/SpringBootMongoDB/src/main/java/com/cdg/cdg/models/Congregant.java
+/home/victorpuch/SpringBootMongoDB/src/main/java/com/cdg/cdg/CdgApplication.java
+/home/victorpuch/SpringBootMongoDB/src/main/java/com/cdg/cdg/repositories/CongregantRepository.java

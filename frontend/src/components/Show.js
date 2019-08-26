@@ -21,7 +21,7 @@ class Show extends Component {
 
   delete(id){
     console.log(id);
-    axios.delete('http://localhost:8080/congregants/'+id)
+    axios.put('http://localhost:8080/congregants/delete/'+id)
       .then((result) => {
         this.props.history.push("/")
       });
@@ -33,7 +33,7 @@ class Show extends Component {
         <div className="panel panel-default">
           <div className="panel-heading">
             <h3 className="panel-title">
-              Contact Details
+              Congregant Details
             </h3>
           </div>
           <div className="panel-body">
@@ -41,6 +41,10 @@ class Show extends Component {
             <dl>
               <dt>Name:</dt>
               <dd>{this.state.contact.name}</dd>
+              <dt>First Last Name:</dt>
+              <dd>{this.state.contact.first_last_name}</dd>
+              <dt>First Last Name:</dt>
+              <dd>{this.state.contact.second_last_name}</dd>
               <dt>Address:</dt>
               <dd>{this.state.contact.address}</dd>
               <dt>Birthday:</dt>
@@ -49,6 +53,16 @@ class Show extends Component {
               <dd>{this.state.contact.phone}</dd>
               <dt>Email Address:</dt>
               <dd>{this.state.contact.email}</dd>
+              <dt>Gender:</dt>
+              <dd>{this.state.contact.gender}</dd>
+              <dt>Civil Status:</dt>
+              <dd>{this.state.contact.civil_status}</dd>
+               <dt>Type:</dt>
+              <dd>{this.state.contact.type}</dd>
+               <dt>Baptized:</dt>
+              <dd>{this.state.contact.baptized}</dd>
+               <dt>Status:</dt>
+              <dd>{this.state.contact.status}</dd>
             </dl>
             <Link to={`/edit/${this.state.contact.id}`} className="btn btn-success">Edit</Link>&nbsp;
             <button onClick={this.delete.bind(this, this.state.contact.id)} className="btn btn-danger">Delete</button>
