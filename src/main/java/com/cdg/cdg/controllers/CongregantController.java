@@ -49,7 +49,6 @@ public class CongregantController {
     public Congregant update(@PathVariable String id, @RequestBody Congregant congregant) {
         Optional<Congregant> optcontact = congregantRepository.findById(id);
         Congregant c = optcontact.get();
-         System.out.println("updating");
         if(congregant.getName() != null)
             c.setName(congregant.getName());
         if(congregant.getFirst_last_name() != null)
@@ -81,7 +80,6 @@ public class CongregantController {
         Optional<Congregant> optcontact = congregantRepository.findById(id);
         Congregant c = optcontact.get();
         c.setStatus("B");
-        System.out.println("deleting");
         congregantRepository.save(c);
         return c;
     }
