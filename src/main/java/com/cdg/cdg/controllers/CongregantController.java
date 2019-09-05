@@ -83,4 +83,13 @@ public class CongregantController {
         congregantRepository.save(c);
         return c;
     }
+    
+     @RequestMapping(method=RequestMethod.PUT, value="/congregants/activate/{id}")
+        public Congregant activate(@PathVariable String id) {
+        Optional<Congregant> optcontact = congregantRepository.findById(id);
+        Congregant c = optcontact.get();
+        c.setStatus("A");
+        congregantRepository.save(c);
+        return c;
+    }
 }

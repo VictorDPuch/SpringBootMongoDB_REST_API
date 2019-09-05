@@ -63,4 +63,13 @@ public class GroupController {
         groupRepository.save(g);
         return g;
     }
+    
+     @RequestMapping(method=RequestMethod.PUT, value="/groups/activate/{id}")
+    public Group activate(@PathVariable String id) {
+        Optional<Group> optgroup = groupRepository.findById(id);
+        Group g = optgroup.get();
+        g.setStatus("A");
+        groupRepository.save(g);
+        return g;
+    }
 }

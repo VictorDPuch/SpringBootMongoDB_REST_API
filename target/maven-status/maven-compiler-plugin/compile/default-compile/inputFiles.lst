@@ -1,4 +1,13 @@
 /home/victorpuch/SpringBootMongoDB/src/main/java/com/cdg/cdg/controllers/CongregantController.java
+/home/victorpuch/SpringBootMongoDB/src/main/java/com/cdg/cdg/models/Membership.java
+/home/victorpuch/SpringBootMongoDB/src/main/java/com/cdg/cdg/controllers/GroupController.java
+/home/victorpuch/SpringBootMongoDB/src/main/java/com/cdg/cdg/controllers/MembershipController.java
+/home/victorpuch/SpringBootMongoDB/src/main/java/com/cdg/cdg/models/User.java
 /home/victorpuch/SpringBootMongoDB/src/main/java/com/cdg/cdg/models/Congregant.java
+/home/victorpuch/SpringBootMongoDB/src/main/java/com/cdg/cdg/repositories/UserRepository.java
+/home/victorpuch/SpringBootMongoDB/src/main/java/com/cdg/cdg/repositories/MembershipRepository.java
+/home/victorpuch/SpringBootMongoDB/src/main/java/com/cdg/cdg/repositories/GroupRepository.java
 /home/victorpuch/SpringBootMongoDB/src/main/java/com/cdg/cdg/CdgApplication.java
+/home/victorpuch/SpringBootMongoDB/src/main/java/com/cdg/cdg/controllers/UserController.java
+/home/victorpuch/SpringBootMongoDB/src/main/java/com/cdg/cdg/models/Group.java
 /home/victorpuch/SpringBootMongoDB/src/main/java/com/cdg/cdg/repositories/CongregantRepository.java

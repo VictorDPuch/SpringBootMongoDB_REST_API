@@ -1,4 +1,13 @@
+com/cdg/cdg/repositories/MembershipRepository.class
+com/cdg/cdg/controllers/UserController.class
+com/cdg/cdg/controllers/MembershipController.class
+com/cdg/cdg/repositories/UserRepository.class
+com/cdg/cdg/models/Group.class
+com/cdg/cdg/controllers/CongregantController.class
+com/cdg/cdg/repositories/GroupRepository.class
 com/cdg/cdg/CdgApplication.class
 com/cdg/cdg/models/Congregant.class
+com/cdg/cdg/models/Membership.class
 com/cdg/cdg/repositories/CongregantRepository.class
-com/cdg/cdg/controllers/CongregantController.class
+com/cdg/cdg/models/User.class
+com/cdg/cdg/controllers/GroupController.class
